@@ -1,3 +1,4 @@
+# Tudorica Eric Emanuel, seria CC, grupa 313
 # Football result predictor
 
 This projects implements a ML model that predicts the result of a match based one the stats at the half-time. The model is based on a clasification problem, being trained by an extensive dataframe. 
@@ -22,3 +23,6 @@ class 1 (Home win): The distribution shows mostly positive half-time goal differ
 
 ## Training and evaluating base model
 We trained a random forest model due to the random nature of football (we dont have a clear relation between stats at half time and the final result). After training, we get a 57.29% accuracy. We assess the result based on the testing dataset and the confusion matrix that we generated. We see that the model has predicted 84/122 home wins, 47/85 away wins and 34/81 ties. Altough, the score may seem low, due to the unpredictable nature of football results and the small training dataset, the result is quite good.
+
+## Bonus - creating a graphical user interface
+We use the gradio library to create a browser interface where we can insert the names of two teams, and their respective goals numbers at halftime. We then submit the data, and our trained model can predict what team will win. In order to have the model ready to predict, we need to save it using the joblib library. Another important aspect is sanitizing the input, transforming the input numbers in ints from strings (default python input format). This GUI adds an interactive side to the project, making it user friendly.

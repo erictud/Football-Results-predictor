@@ -8,3 +8,6 @@ analyze: data
 
 train: analyze
 	python3 train_model.py
+
+gui: 
+	python3 gui.py

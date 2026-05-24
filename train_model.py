@@ -1,4 +1,5 @@
 import pandas as pnd
+import joblib
 import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, ConfusionMatrixDisplay
@@ -19,6 +20,9 @@ def train_and_test(df_train, df_test):
     print("Training random forest model...")
     model = RandomForestClassifier(random_state=42)
     model.fit(input_train, target_train)
+
+    # saving model
+    joblib.dump(model, "football_predict.joblib")
     
     # testing model based on test.csv data frame
     print("Generating predictions...")
